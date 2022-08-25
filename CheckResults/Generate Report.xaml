@@ -1,0 +1,138 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Generate_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_str_studentsResultExcelPath" Type="InArgument(x:String)" />
+    <x:Property Name="students_result_DT" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_str_tenthResultExcelPath" Type="InArgument(x:String)" />
+    <x:Property Name="resultType" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_eleventhResultExcelPath" Type="InArgument(x:String)" />
+    <x:Property Name="result_sheetName" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Generate_Report.in_str_studentsResultExcelPath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Generate_Report.in_str_studentsResultExcelPath>
+  <this:Generate_Report.students_result_DT>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:Generate_Report.students_result_DT>
+  <this:Generate_Report.in_str_tenthResultExcelPath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Generate_Report.in_str_tenthResultExcelPath>
+  <this:Generate_Report.resultType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Generate_Report.resultType>
+  <this:Generate_Report.in_str_eleventhResultExcelPath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Generate_Report.in_str_eleventhResultExcelPath>
+  <this:Generate_Report.result_sheetName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Generate_Report.result_sheetName>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,1212.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Generate_Report_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Generate_Report" sap:VirtualizedContainerService.HintSize="538.666666666667,1148" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[resultType]" sap:VirtualizedContainerService.HintSize="496.666666666667,1025.33333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="10th" sap:VirtualizedContainerService.HintSize="376,787.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:RemoveDuplicateRows DataTable="[students_result_DT]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[students_result_DT]" />
+        <ui:RemoveDataRow Row="{x:Null}" DataTable="[students_result_DT]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="334,190" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0" />
+        <ui:RemoveDataRow Row="{x:Null}" DataTable="[students_result_DT]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="334,190" sap2010:WorkflowViewState.IdRef="RemoveDataRow_2" RowIndex="1" />
+        <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[students_result_DT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="[result_sheetName]" WorkbookPath="[in_str_tenthResultExcelPath]" />
+      </Sequence>
+      <Sequence x:Key="12th" sap:VirtualizedContainerService.HintSize="376,787.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:RemoveDuplicateRows DataTable="[students_result_DT]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[students_result_DT]" />
+        <ui:RemoveDataRow Row="{x:Null}" DataTable="[students_result_DT]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="334,190" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3" RowIndex="0" />
+        <ui:RemoveDataRow Row="{x:Null}" DataTable="[students_result_DT]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="334,190" sap2010:WorkflowViewState.IdRef="RemoveDataRow_4" RowIndex="1" />
+        <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[students_result_DT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_5" SheetName="[result_sheetName]" WorkbookPath="[in_str_studentsResultExcelPath]" />
+      </Sequence>
+      <Sequence x:Key="11th" sap:VirtualizedContainerService.HintSize="376,787.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:RemoveDuplicateRows DataTable="[students_result_DT]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[students_result_DT]" />
+        <ui:RemoveDataRow Row="{x:Null}" DataTable="[students_result_DT]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="334,190" sap2010:WorkflowViewState.IdRef="RemoveDataRow_5" RowIndex="0" />
+        <ui:RemoveDataRow Row="{x:Null}" DataTable="[students_result_DT]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="334,190" sap2010:WorkflowViewState.IdRef="RemoveDataRow_6" RowIndex="1" />
+        <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[students_result_DT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_6" SheetName="[result_sheetName]" WorkbookPath="[in_str_eleventhResultExcelPath]" />
+      </Sequence>
+    </Switch>
+  </Sequence>
+</Activity>
